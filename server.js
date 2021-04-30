@@ -1,25 +1,40 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
 
 const articles = {}
 function createArticle (article) {
-  const id = Object.keys(articles).length
+  var id = Object.keys(articles).length
   article.createdAt = new Date()
   articles[id] = article
 }
+
 createArticle({
-  title: 'Squirrel escapes squirrel prison, now at large!',
-  content: 'Yesterday evening at 7:47PM, the criminal squirrel Rabid Rabindra got out of his cage.'
+  title: 'Curry Leaf',
+  content: 'This is one of the top rated Indian restaurants in Grand Rapids. They serve modern and traditional recipes.',
+  image: '/img/curry-leaf.jfif',
+  drink: 'Mango Lassi',
+  website: 'http://curryleafmi.com/',
+  restaurantName: 'Curry Leaf'
 })
 createArticle({
-  title: 'Squirrel lured back into prison with peanut butter',
-  content: 'This morning at 10:13PM, the smell of peanut butter drew Rabid Rabindra the squirrel back into his cage.'
+  title: 'Bombay Cousine',
+  content: 'One of the oldest and finest Indian cousines in Grand Rapids.',
+  image: '/img/bombay-cousine.jfif',
+  drink: 'Iced Coffee',
+  website: 'http://www.eatatbombay.com/',
+  restaurantName: 'Bombay Cousine'
 })
-
-app.set('view engine', 'ejs')
-
-app.use(express.static('public'))
+createArticle({
+  title: 'Pind',
+  content: 'One of the newest Indian restaurants that have opened during covid at the heart of downtown Grand Rapids.',
+  image: '/img/pind.jfif',
+  drink: 'Chai',
+  website: 'http://www.pindindian.com/',
+  restaurantName: 'Pind Indian Cousine'
+})
 
 app.get('/', function (request, response) {
   response.render('pages/index', {
@@ -27,8 +42,22 @@ app.get('/', function (request, response) {
   })
 })
 
-app.get('/about', function (request, response) {
-  response.end('Ah, where to begin...')
+app.get('/curry-leaf', function (request, response) {
+  response.render('pages/indian-restaurants', {
+    restaurant: articles[0]
+  })
+})
+
+app.get('/bombay-cousine', function (request, response) {
+  response.render('pages/indian-restaurants', {
+    restaurant: articles[1]
+  })
+})
+
+app.get('/pind', function (request, response) {
+  response.render('pages/indian-restaurants', {
+    restaurant: articles[2]
+  })
 })
 
 app.listen(port)

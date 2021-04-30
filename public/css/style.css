@@ -1,0 +1,41 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: rgb(255, 231, 199);
+}
+
+h1 {
+  background-color: tan;
+  padding: 2% 1%;
+  width: 100%;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+img {
+  float: left;
+  width: 40%;
+  margin: 3%;
+  border: 2px solid black;
+}
+
+.description {
+  margin-top: 3%;
+}
+
+.site-link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgb(71, 71, 71);
+  border-radius: 0.3em;
+  color: white;
+  padding: 1%;
+  margin: 10% 1% 2% 1%;
+  text-align: center;
+}
+
+.site-link:hover {
+  background-color: tan;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Restaurant Tour</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+  <%- include('../partials/nav') %>
+
+  <img src="<%= restaurant.image %>">
+
+  <p class="description">
+    <%= restaurant.content %>
+  </p>
+
+  <%- include('../partials/subheading') %>
+  <p>
+    <%= restaurant.drink %>
+  </p>
+
+  <a href="<%= restaurant.website %>" alt="<%= restaurant.restaurantName %> Website" class="site-link" target="_blank">
+    <%= restaurant.restaurantName %> Website</a>
+
+</body>
+
+</html>
