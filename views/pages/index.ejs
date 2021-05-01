@@ -6,14 +6,14 @@
   <title>Indian Restaurants</title>
 </head>
 <body>
-  &lt;%- include('../partials/header') %&gt;
-  &lt;%- include('../partials/nav') %&gt;
+  <%- include('../partials/header') %>
+  <%- include('../partials/nav') %>
   
-  &lt;% Object.keys(articles).forEach(function (id) { %&gt;
+  <% Object.keys(articles).forEach(function (id) { %>
     <article>
-      <h2>&lt;%= articles[id].title %&gt;</h2>
-      <p>&lt;%= articles[id].content %&gt;</p>
+      <h2><%= articles[id].title %></h2>
+      <p><%= articles[id].content %></p>
     </article>
-    &lt;% }) %&gt;
+    <% }) %>
 </body>
 </html>

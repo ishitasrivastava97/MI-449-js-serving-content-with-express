@@ -9,22 +9,22 @@
 </head>
 
 <body>
-  &lt;%- include('../partials/header') %&gt;
-  &lt;%- include('../partials/nav') %&gt;
+  <%- include('../partials/header') %>
+  <%- include('../partials/nav') %>
 
-  <img src="&lt;%= restaurant.image %&gt;" alt="Restaurant image">
+  <img src="<%= restaurant.image %>" alt="Restaurant image">
 
   <p class="description">
-    &lt;%= restaurant.content %&gt;
+    <%= restaurant.content %>
   </p>
 
-  &lt;%- include('../partials/subheading') %&gt;
+  <%- include('../partials/subheading') %>
   <p>
-    &lt;%= restaurant.drink %&gt;
+    <%= restaurant.drink %>
   </p>
 
-  <a href="&lt;%= restaurant.website %>&gt;" alt="&lt;%= restaurant.title %&gt; Website">
-    &lt;%= restaurant.title %&gt; Website
+  <a href="<%= restaurant.website %>">
+    <%= restaurant.title %> Website
   </a>
 
 </body>
