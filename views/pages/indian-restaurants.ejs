@@ -2,29 +2,30 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Indian Restaurant Tour</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
-  <%- include('../partials/header') %>
-  <%- include('../partials/nav') %>
+  &lt;%- include('../partials/header') %&gt;
+  &lt;%- include('../partials/nav') %&gt;
 
-  <img src="<%= restaurant.image %>">
+  <img src="&lt;%= restaurant.image %&gt;" alt="Restaurant image">
 
   <p class="description">
-    <%= restaurant.content %>
+    &lt;%= restaurant.content %&gt;
   </p>
 
-  <%- include('../partials/subheading') %>
+  &lt;%- include('../partials/subheading') %&gt;
   <p>
-    <%= restaurant.drink %>
+    &lt;%= restaurant.drink %&gt;
   </p>
 
-  <a href="<%= restaurant.website %>" alt="<%= restaurant.restaurantName %> Website" class="site-link" target="_blank">
-    <%= restaurant.restaurantName %> Website</a>
+  <a href="&lt;%= restaurant.website %>&gt;" alt="&lt;%= restaurant.title %&gt; Website">
+    &lt;%= restaurant.title %&gt; Website
+  </a>
 
 </body>
 
